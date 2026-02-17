@@ -414,5 +414,89 @@ div.h3{
     background: none !important;
     
 }
+/* ============================= */
+/* RESPONSIVE GLOBAL MEJORADO  */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    /* NAV RESPONSIVE */
+    .menu ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .menu img {
+        height: 40px;
+    }
+
+    .menu a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    /* HERO */
+    .hero-banner {
+        height: 220px;
+        padding: 20px;
+    }
+
+    .banner-texto h1 {
+        font-size: 22px;
+    }
+
+    .banner-texto p {
+        font-size: 14px;
+    }
+
+    /* PROMOS */
+    .promo-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .promo-card:hover {
+        transform: none; /* Quitamos salto exagerado en móvil */
+    }
+
+    /* MENÚ INGREDIENTES */
+    .menuu {
+        flex-direction: column;
+    }
+
+    .ingredientesD,
+    .ingredientesS,
+    .frappes {
+        margin: 10px 0;
+    }
+
+    .ingredientesD:hover,
+    .ingredientesS:hover,
+    .frappes:hover {
+        transform: none;
+    }
+
+    /* UBICACIÓN */
+    #ubicacion {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* FOOTER */
+    .footer-contenedor {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
 
 
