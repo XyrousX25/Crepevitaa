@@ -1,0 +1,418 @@
+/* RESET BÁSICO */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAV */
+.menu {
+    position: sticky;  /* 1. La magia: se pega al scrollear */
+    top: 0;            /* 2. Le dices que se pegue justo en el borde de arriba */
+    z-index: 1000;     /* 3. Asegura que flote ENCIMA de las fotos y textos, no abajo */
+    background-color: rgb(255, 238, 221); /* 4. IMPORTANTE: Ponle fondo, si no se verá transparente */
+    width: 100%;       /* Para asegurar que cubra todo el ancho */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Mantén tu sombra */
+}
+
+.menu ul { 
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px; /* mejor para móvil */
+    background-color: rgb(255, 238, 221);
+    padding: 15px;
+    margin: 0;
+    align-items: center;
+}
+
+.menu img {
+    height: 60px;
+    width: auto;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    border-color: black;
+    background-color: rgb(230, 169, 128);
+}
+
+
+.hero-banner {
+    height: 250px;
+    background-image: url(banner.jpeg);
+    background-size: cover;
+   background-position: center 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.45);
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ff758f;
+}
+
+/* MEDIA QUERY - TABLET Y PC */
+@media (min-width: 768px) {
+
+    .menu ul {
+        gap: 60px;
+    }
+
+    .hero-banner {
+        height: 400px;
+    }
+
+    .banner-texto h1 {
+        font-size: 40px;
+    }
+
+    .btn-hero {
+        font-size: 16px;
+    }
+
+}
+
+.Promos{
+
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 238, 221);
+    
+    
+
+}
+
+
+.promos {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 238, 221);
+}
+
+
+div.combos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: rgb(255, 250, 245);
+}
+
+/* LA TARJETA (Ahora controla todo directamente) */
+.promo-card {
+    background-color: white;
+    width: 300px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s;
+    
+    /* Esto es lo nuevo para organizar sin divs extra: */
+    display: flex;
+    flex-direction: column; /* Apila los elementos uno sobre otro */
+}
+
+.promo-card:hover {
+    transform: translateY(-50px);
+}
+
+/* LA IMAGEN DIRECTA */
+.promo-card img {
+    width: 100%;
+    height: 50%; /* Ocupa la mitad de arriba */
+    object-fit: cover; /* Se recorta bien */
+}
+
+/* EL TEXTO (H3 y P) */
+.promo-card h3 {
+    margin: 20px 20px 10px 20px; /* Arriba, Derecha, Abajo, Izquierda */
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.promo-card p {
+    margin: 0 20px; /* Solo márgenes a los lados */
+    color: #666;
+    flex-grow: 1; /* TRUCO: Esto hace que el texto ocupe el espacio libre y empuje el botón abajo */
+}
+
+/* EL BOTÓN */
+.promo-card a {
+    
+    margin: 20px; /* Margen alrededor */
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.promo-card a:hover {
+    background-color: #ff4d6d;
+}
+
+/* --- SECCIÓN SOBRE NOSOTROS --- */
+
+.sobre-nosotros {
+    display: flex;           /* Activa el modo flexible (lado a lado) */
+    align-items: center;     /* Centra verticalmente (que el texto no quede arriba y la foto abajo) */
+    justify-content: center; /* Centra todo el contenido */
+    gap: 50px;               /* Espacio grande entre el texto y la foto */
+    padding: 60px 20px;      /* Espacio arriba/abajo y a los lados */
+    max-width: 1100px;       /* Ancho máximo para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto;          /* Centra la sección en la página */
+    background-color: white; /* Opcional: fondo blanco para limpiar */
+}
+
+/* El cuadro del texto */
+.info-crepe {
+    flex: 1; /* Ocupa el 50% del espacio disponible */
+}
+
+.info-crepe h2 {
+    color: #000000; /* Tu color rosa de marca */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.info-crepe p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Altura de línea para que sea fácil de leer */
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* El cuadro de la imagen */
+.foto-crepe {
+    flex: 1; /* Ocupa el otro 50% del espacio */
+}
+
+.foto-crepe img {
+    width: 100%;       /* Que ocupe todo el ancho de su columna */
+    border-radius: 20px; /* Bordes redondeados modernos */
+    box-shadow: 10px 10px 0px rgba(255, 77, 109, 0.2); /* Un efecto de sombra decorativa estilo "sticker" */
+    transition: transform 0.3s; /* Para que el hover sea suave */
+}
+.foto-crepe img:hover{
+    transform: translateY(-20px); /* Efecto de "levantar" la imagen al pasar el mouse */
+}
+
+
+/* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    .sobre-nosotros {
+        flex-direction: column; /* Cambia de lado-a-lado a arriba-abajo */
+        text-align: center;     /* Centra el texto en celular */
+    }
+
+    .info-crepe h2 {
+        font-size: 2rem;
+    }
+}
+div.menutitulo {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 238, 221);
+}
+
+.menuu{
+    
+    display: flex;
+    padding: 15px;
+
+
+}
+
+
+.ingredientesD, .ingredientesS, .frappes {
+    flex: 1;
+    background-color: rgb(255, 238, 221);
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    
+}
+.ingredientesD:hover, .ingredientesS:hover, .frappes:hover {
+    transform: translateY(-50px);}
+
+
+div.h3{
+    text-align: center;
+    padding: 10px;
+}
+
+/* CONTENEDOR DE LA SECCIÓN */
+.seccion-galeria {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fafafa;
+}
+
+.seccion-galeria h2 {
+    background-color: rgb(255, 238, 221);
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+/* LA REJILLA MÁGICA (GRID) */
+.galeria-grid {
+    display: grid; /* ESTA LÍNEA HACE TODO EL TRABAJO RESPONSIVE: */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* "Mete todas las columnas que quepan, pero que midan mínimo 250px" */
+    gap: 15px; /* Espacio entre fotos */
+    max-width: 1000px; /* Que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto; /* Centrar la galería */
+}
+
+/* LAS FOTOS */
+.galeria-grid img {
+    width: 100%;
+    height: 315px; /* Forzamos a que todas tengan la misma altura */
+    object-fit: cover; /* Recorta la imagen para que no se deforme */
+    border-radius: 12px;
+    transition: transform 0.3s; /* Para la animación suave */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* EFECTO AL PASAR EL MOUSE (Opcional pero se ve pro) */
+.galeria-grid img:hover {
+    transform: scale(1.05); /* Crece un poquito */
+}
+
+#ubicacion {
+    display: flex;
+    gap: 50px;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.textodelaubi{
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 238, 221);
+}
+
+.mapa {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.info-ubicacion {
+    flex: 1;
+}
+
+.info-ubicacion p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    #ubicacion {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 50px 20px 20px 20px;
+}
+
+.footer-contenedor {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    color: #ff4d6d;
+}
+
+.footer-col p,
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-col a:hover {
+    color: #ff4d6d;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.menu li:last-child a,
+.menu li:nth-last-child(2) a {
+    padding: 0;
+    border: none !important;
+    background: none !important;
+    border-radius: 30px;
+}
+
+.menu li:last-child a:hover,
+.menu li:nth-last-child(2) a:hover {
+    border: none !important;
+    background: none !important;
+    
+}
+
+
